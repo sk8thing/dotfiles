@@ -1,0 +1,25 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin": "10 10 0 10",
+  "fixed-center": true,
+  "reload_style_on_change": true,
+  "include": [
+    "$XDG_CONFIG_HOME/waybar/modules/clock.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/workspaces.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/tray.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/bluetooth.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/wireplumber.jsonc",
+  ],
+  "modules-left": [
+    "hyprland/workspaces",
+  ],
+  "modules-center": [
+    "clock",
+  ],
+  "modules-right": [
+    "bluetooth",
+    "wireplumber",
+    "tray",
+  ],
+}

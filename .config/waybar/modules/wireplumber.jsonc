@@ -1,0 +1,13 @@
+{
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": " ",
+    "format-icons": [
+		"", "", "󰕾", ""
+	  ],
+    "on-scroll-up": "$XDG_CONFIG_HOME/hypr/scripts/audio.sh -i",
+    "on-scroll-down": "$XDG_CONFIG_HOME/hypr/scripts/audio.sh -d",
+    "on-click": "$XDG_CONFIG_HOME/hypr/scripts/audio.sh -g",
+    "on-click-right": "$XDG_CONFIG_HOME/hypr/scripts/audio.sh -m",
+  }
+}

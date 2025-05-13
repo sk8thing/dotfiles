@@ -1,0 +1,31 @@
+@import "waybar-matugen.css";
+
+* { 
+  border: none;
+  border-radius: 0;
+  font: 16px "NotoMono Nerd Font";
+  font-weight: bolder;
+  box-shadow: none; 
+  text-shadow: none;
+}
+
+window#waybar {
+  background: @background-alpha;
+  border-radius: 10px;
+}
+
+.modules-left, .modules-center, .modules-right {
+  margin: 5px;
+  color: @primary;
+}
+
+#workspaces, #window, #clock, #tray, #bluetooth, #wireplumber {
+  padding: 0px 12px;
+  margin-right: 4px;
+  background: @surface;
+  border-radius: 30px;
+}
+
+#workspaces button {
+  color: @primary;
+}

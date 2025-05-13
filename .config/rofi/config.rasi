@@ -1,0 +1,70 @@
+configuration {
+  modi: "drun";
+  display-drun: "";
+  drun-display-format: "{icon}{name}";
+  font: "NotoMono Nerd Font 12";
+  show-icons: true;
+}
+
+@import "~/.config/rofi/rofi-matugen.rasi"
+
+* {
+  border: 0;
+  border-radius: 10px;
+  margin: 0;
+  padding: 2;
+  text-color: @on-surface;
+  border-color: @primary;
+}
+
+window {
+  width: 25%;
+  height: 30%;
+  fullscreen: false;
+  transparency: "real";
+  background-color: @bg-transparent;
+}
+
+prompt {
+  text-color: @on-surface;
+}
+
+inputbar {
+  text-color: @on-surface;
+}
+
+entry {
+  placeholder: "Search...";
+  text-color: @on-surface;
+  placeholder-color: @inverse-on-surface;
+}
+
+case-indicator {
+  text-color: @on-surface;
+}
+
+listview {
+  border: 0px;
+  spacing: 5px;
+  dynamic: true;
+  scrollbar: true;
+  scroll-method: 0; 
+  scroll-steps: 1;
+}
+
+scrollbar {
+  width: 5px;
+  handle-width: 5px;
+  handle-color: @primary-fixed;
+  border: 0;
+}
+
+element.normal.normal, element.alternate.normal {
+  background-color: @primary-fixed-transparent;
+  text-color: @inverse-on-surface;
+}
+
+element.selected.normal, element.selected.active {
+  background-color: @primary-transparent;
+  text-color: @on-surface;
+}
