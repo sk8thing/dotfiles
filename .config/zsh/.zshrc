@@ -146,6 +146,14 @@ source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+# Configure gpg-agent for SSH
+export GPG_TTY=$(tty)
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye > /dev/null
+
+alias ykman-switch="gpg-connect-agent 'scd serialno' 'learn --force' /bye"
+
 # Keybinds
 bindkey "^J" history-search-forward
 bindkey "^K" history-search-backward

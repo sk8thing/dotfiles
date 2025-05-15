@@ -1,0 +1,8 @@
+[user]
+	name = sk8thing
+	email = sk8thing@tuta.com
+	signingkey = 0x7A4F8A3F523E869E
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
