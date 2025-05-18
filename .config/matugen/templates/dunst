@@ -69,3 +69,6 @@ timeout = 0
 background = "{{colors.background.default.hex}}cc"
 foreground = "{{colors.on_surface.default.hex}}"
 highlight = "{{colors.error.default.hex}}"
+[play_sound]
+summary = "*"
+script = ~/.config/dunst/scripts/alert.sh
