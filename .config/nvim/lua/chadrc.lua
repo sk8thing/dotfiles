@@ -10,22 +10,23 @@ M.ui = {
 }
 
 M.mason = {
-  pkgs = {
-    "clangd",
-    "css-lsp",
-    "eslint-lsp",
-    "gopls",
-    "html-lsp",
-    "htmx-lsp",
-    "lua-language-server",
-    "llm-ls",
-    "python-lsp-server",
-    "stylua",
-    "tailwindcss-language-server",
-    "templ",
-    "typescript-language-server",
-    "yaml-language-server"
-  }
+    pkgs = {
+        "clangd",
+        "css-lsp",
+        "eslint-lsp",
+        "gopls",
+        "html-lsp",
+        "htmx-lsp",
+        "lua-language-server",
+        "llm-ls",
+        "python-lsp-server",
+        "stylua",
+        "tailwindcss-language-server",
+        "templ",
+        "typescript-language-server",
+        "yaml-language-server",
+        "bash-language-server"
+    }
 }
 
 return M

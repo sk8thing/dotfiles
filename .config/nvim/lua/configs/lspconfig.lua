@@ -5,17 +5,18 @@ local lspconfig = require "lspconfig"
 
 -- EXAMPLE
 local servers = {
-	"html",
-	"cssls",
-	"templ",
-	"gopls",
-	"htmx",
-	"tailwindcss",
-	"ts_ls",
-  "eslint",
-  "pylsp",
-  "clangd",
-  "yamlls"
+    "html",
+    "cssls",
+    "templ",
+    "gopls",
+    "htmx",
+    "tailwindcss",
+    "ts_ls",
+    "eslint",
+    "pylsp",
+    "clangd",
+    "yamlls",
+    "bashls"
 }
 local nvlsp = require "nvchad.configs.lspconfig"
 
