@@ -16,5 +16,8 @@ map("i", "<C-l>", function()
 end, { desc = "Accept LLM completion", noremap = true, silent = true })
 map("v", ">", ">gv", { desc = "Indent visual selection" })
 map("v", "<", "<gv", { desc = "Unindent visual selection" })
+map("n", "K", function()
+    require("pretty_hover").hover()
+end, { noremap = true, silent = true })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
