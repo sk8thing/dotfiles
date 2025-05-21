@@ -19,5 +19,7 @@ map("v", "<", "<gv", { desc = "Unindent visual selection" })
 map("n", "K", function()
     require("pretty_hover").hover()
 end, { noremap = true, silent = true })
+map("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { desc = "Code action" })
+map("n", "<leader>sh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", { desc = "Signature help" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
