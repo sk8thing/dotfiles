@@ -11,7 +11,6 @@ local servers = {
     "gopls",
     "htmx",
     "tailwindcss",
-    "ts_ls",
     "eslint",
     "pylsp",
     "clangd",
