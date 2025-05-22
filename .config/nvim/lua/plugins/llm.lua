@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "huggingface/llm.nvim",
-  lazy = false,
+  event = "LspAttach",
   opts = {
     lsp = {
       bin_path = vim.api.nvim_call_function("stdpath", { "data" }) .. "/mason/bin/llm-ls",
