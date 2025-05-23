@@ -16,7 +16,7 @@ return {
       middle = "<｜fim▁middle｜>",
       suffix = "<｜fim▁suffix｜>",
     },
-    accept_keymap = "<C-l>",
+    accept_keymap = "<C-p>",
     context_window = 4096,
     request_body = {
       options = {
