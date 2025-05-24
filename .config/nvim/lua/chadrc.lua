@@ -25,7 +25,9 @@ M.mason = {
         "templ",
         "typescript-language-server",
         "yaml-language-server",
-        "bash-language-server"
+        "bash-language-server",
+        "prettier",
+        "prettierd",
     }
 }
 
