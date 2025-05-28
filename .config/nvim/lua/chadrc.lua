@@ -26,7 +26,7 @@ M.mason = {
         "stylua",
         "tailwindcss-language-server",
         "templ",
-        "typescript-language-server",
+        "vtsls",
         "yaml-language-server",
     },
 }
