@@ -23,5 +23,6 @@ map("n", "<leader>pd", "<cmd>Lspsaga peek_definition<cr>", { desc = "Peek defini
 map("n", "<leader>pdt", "<cmd>Lspsaga peek_type_definition<cr>", { desc = "Peek type definition" })
 map("n", "<leader>gd", "<cmd>Lspsaga goto_definition<cr>", { desc = "Go to definition" })
 map("n", "<leader>gdt", "<cmd>Lspsaga goto_type_definition<cr>", { desc = "Go to type definition" })
+map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Lists all git branches" })
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
