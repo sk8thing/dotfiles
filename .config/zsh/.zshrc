@@ -7,7 +7,8 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 export GOPATH=$HOME/go
-export PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export KUSTOMIZE_PLUGIN_PATH=/opt/kustomize/
+export PATH=$GOPATH/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$KUSTOMIZE_PLUGIN_PATH/viaduct.ai/v1/ksops:$PATH
 
 # Path to your Oh My Zsh installation.
 ZSH=/usr/share/oh-my-zsh/
