@@ -1,0 +1,7 @@
+@import "colors.css";
+
+menu,
+.context-menu,
+.GtkMenu {
+  font-size: 12px;
+}
