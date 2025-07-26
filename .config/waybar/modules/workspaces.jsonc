@@ -1,10 +1,13 @@
 {
   "hyprland/workspaces": {
-    "active-only": false,
-    "all-outputs": true,
-    "disable-scroll": true,
-    "format": "{name}",
-    "on-click": "activate",
-    "sort-by-number": true
+    "format": "{icon}",
+    "format-icons": {
+      "urgent": "",
+      "active": "", // focused workspace on current monitor 
+      "visible": "", // focused workspace on other monitors
+      "default": "",
+      "empty": "" // persistent (created by this plugin)
+    },
+    "all-outputs": false
   }
 }
