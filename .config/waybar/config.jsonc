@@ -10,9 +10,11 @@
     "$XDG_CONFIG_HOME/waybar/modules/tray.jsonc",
     "$XDG_CONFIG_HOME/waybar/modules/bluetooth.jsonc",
     "$XDG_CONFIG_HOME/waybar/modules/wireplumber.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/caffeine.jsonc",
   ],
   "modules-left": [
     "hyprland/workspaces",
+    "idle_inhibitor",
   ],
   "modules-center": [
     "clock",
