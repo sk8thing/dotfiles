@@ -22,6 +22,7 @@ map("n", "<leader>ra", "<cmd>Lspsaga rename<cr>", { desc = "LSP rename", noremap
 map("n", "<leader>pd", "<cmd>Lspsaga peek_definition<cr>", { desc = "Peek definition" })
 map("n", "<leader>pdt", "<cmd>Lspsaga peek_type_definition<cr>", { desc = "Peek type definition" })
 map("n", "<leader>gd", "<cmd>Lspsaga goto_definition<cr>", { desc = "Go to definition" })
+map("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Go to references" })
 map("n", "<leader>gdt", "<cmd>Lspsaga goto_type_definition<cr>", { desc = "Go to type definition" })
 map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Lists all git branches" })
 
