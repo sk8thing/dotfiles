@@ -18,7 +18,7 @@ EOF
 )
 
 generateCommitMsg() {
-    RESPONSE=$(ollama run qwen3:4b "$PROMPT")
+    RESPONSE=$(ollama run qwen3:8b-q4_K_M "$PROMPT")
     COMMIT_MESSAGE=$(echo "$RESPONSE" | tail -n +5)
 }
 
