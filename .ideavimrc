@@ -1,0 +1,65 @@
+set scrolloff=5
+set showmode
+set showcmd
+set number
+set relativenumber
+set smartcase
+set incsearch
+set clipboard=unnamedplus
+let mapleader = ' '
+sethandler <C-v> a:ide
+
+""" Plugins
+" NERDTree
+Plug 'preservim/nerdtree"
+
+"""Mappings
+" Basic operations
+nmap <C-s> :action SaveAll<CR>
+inoremap jk <ESC>
+
+" Tab control
+nmap <Tab>   :action NextTab<CR>
+nmap <S-Tab> :action PreviousTab<CR>
+nmap <leader>b :action NewFile<CR>
+nmap <leader>x :action CloseContent<CR>
+
+" NERDTree
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <leader>e :NERDTreeFocus<CR>
+
+" Split window
+nmap <C-w>v :action SplitVertically<CR>
+nmap <C-w>h :action SplitHorizontally<CR>
+nmap <C-w>+ :action StretchSplitToTop<CR>
+nmap <C-w>- :action StretchSplitToBottom<CR>
+nmap <C-w>> :action StretchSplitToRight<CR>
+nmap <C-w>< :action StretchSplitToLeft<CR>
+nmap <C-h> :action MoveFocusLeft<CR>
+nmap <C-j> :action MoveFocusDown<CR>
+nmap <C-k> :action MoveFocusUp<CR>
+nmap <C-l> :action MoveFocusRight<CR>
+
+" Search
+nmap <leader>ff :action GotoFile<CR>
+nmap <leader>fa :action SearchEverywhere<CR>
+nmap <leader>fw :action FindInPath<CR>
+nmap <leader>fb :action RecentFiles<CR>
+
+" LSP navigation
+nmap <leader>gd :action GotoDeclaration<CR>
+nmap <leader>gdt :action GotoTypeDeclaration<CR>
+nmap <leader>gi :action GotoImplementation<CR>
+nmap <leader>gr :action FindUsages<CR>
+nmap K :action QuickJavaDoc<CR>
+
+" Refactoring and code actions
+nmap <leader>ra :action RenameElement<CR>
+nmap <leader>ca :action ShowIntentionActions<CR>
+
+" Clipboard
+vnoremap <leader>cp "+y
+
+" Comments
+nmap <leader>/ :action CommentByLineComment<CR>
+vnoremap <leader>/ :action CommentByLineComment<CR>
