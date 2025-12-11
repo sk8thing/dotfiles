@@ -1,4 +1,8 @@
-# WORK IN PROGRESS
+## Showcase
+| | |   
+|:------------------------------:|:------------------------------:| 
+|<img width="100%" src="https://github.com/user-attachments/assets/4a1572b0-d010-41ff-8f9f-5431e5e3d071" alt="fastfetch">|<img width="100%" src="https://github.com/user-attachments/assets/07d27875-604b-4aca-9aa1-5350b8090004" alt="neovim">|
+|<img width="100%" src="https://github.com/user-attachments/assets/088f89e6-1bd2-4c08-aef6-07fe91748a3c" alt="rofi">|<img width="100%" src="https://github.com/user-attachments/assets/72a26d9f-0a36-4334-bc25-9edb8031bf50" alt="logout">|
 
 ## Ecosystem
 - **OS:** [Arch Linux](https://archlinux.org)
