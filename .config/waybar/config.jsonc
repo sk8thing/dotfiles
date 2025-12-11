@@ -11,6 +11,8 @@
     "$XDG_CONFIG_HOME/waybar/modules/bluetooth.jsonc",
     "$XDG_CONFIG_HOME/waybar/modules/wireplumber.jsonc",
     "$XDG_CONFIG_HOME/waybar/modules/caffeine.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/cpu.jsonc",
+    "$XDG_CONFIG_HOME/waybar/modules/memory.jsonc",
   ],
   "modules-left": [
     "hyprland/workspaces",
@@ -22,6 +24,8 @@
   "modules-right": [
     "bluetooth",
     "wireplumber",
+    "cpu",
+    "memory",
     "tray",
   ],
 }
