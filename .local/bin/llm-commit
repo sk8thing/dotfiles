@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DIFF=$(git diff --cached)
+EDITED=false
 
 if [ -z "$DIFF" ]; then
     echo "No changes to commit"
@@ -8,27 +9,53 @@ if [ -z "$DIFF" ]; then
 fi
 
 PROMPT=$(cat << EOF
-/no_think
-Given the following git diff, please write a clear and concise git commit message.
-Use present tense, imperative mood.
-Make the first line the title (100 characters max) and the rest the body:
+Generate a Git commit message from the provided git diff that strictly follows the Conventional Commit specification and the conventions described below.
+
+The commit message must follow this structure:
+<type>(<optional scope>): <description>
+<optional body>
+<optional footer>
+
+Choose the correct commit type based on the changes in the diff. Valid types are: feat, fix, refactor, perf, style, test, docs, build, ops, chore.
+
+Include a scope only if it adds meaningful context. Scopes are project-specific and must not contain issue identifiers.
+
+The description is mandatory. It must be written in the imperative, present tense (for example: “add”, “fix”, “remove”). Do not capitalize the first letter and do not end the description with a period.
+
+If the change introduces a breaking change, add "!" before the colon in the subject line and describe the breaking change in the footer. The footer must start with "BREAKING CHANGE:". Use a single line for short explanations or multiple lines if more detail is required.
+
+The body is optional and should explain the motivation for the change or contrast previous behavior, using imperative present tense.
+
+The footer is optional unless there is a breaking change. It may include issue references such as "Closes #123" or "Fixes JIRA-456".
+
+Initial commits must use exactly:
+chore: init
+
+Merge commits and revert commits must follow Git’s default messages and should not be rewritten.
+
+Do not invent changes that are not present in the diff. Do not mention tooling, rules, or analysis in the output. Output only the final commit message.
+
+Here is the git diff to analyze:
 
 $DIFF
 EOF
 )
 
 generateCommitMsg() {
-    RESPONSE=$(ollama run qwen3:8b-q4_K_M "$PROMPT")
-    COMMIT_MESSAGE=$(echo "$RESPONSE" | tail -n +5)
+    RESPONSE=$(ollama run qwen3:8b-q4_K_M "$PROMPT" --keepalive 30s)
+    COMMIT_MESSAGE=$(echo "$RESPONSE" | sed -n '/\.\.\.done thinking/,$p' | sed '1d' | sed '/./,$!d')
 }
 
 while true; do
-    generateCommitMsg
+    if [ "$EDITED" = false ]; then
+        generateCommitMsg
+    fi
     echo -e "\nProposed commit message:"
     echo "----------------------------------------"
     echo "$COMMIT_MESSAGE"
     echo "----------------------------------------"
-    read -rp "How would you like to proceed? (C)ommit/(E)dit/(R)egenerate: " choice
+    echo "How would you like to proceed?"
+    read -rp "(C)ommit (E)dit (R)egenerate (D)iscard: " choice
 
     case "$choice" in
         c|C)
@@ -36,15 +63,19 @@ while true; do
             break
             ;;
         e|E)
+            EDITED=true
             TMPFILE=$(mktemp)
             echo "$COMMIT_MESSAGE" > "$TMPFILE"
             nvim "$TMPFILE"
             COMMIT_MESSAGE=$(cat "$TMPFILE")
             rm "$TMPFILE"
-            git commit -m "$COMMIT_MESSAGE"
-            break
             ;;
         r|R)
+            EDITED=false
+            ;;
+        d|D)
+            exit
+            break
             ;;
         *)
             echo "Invalid option."
