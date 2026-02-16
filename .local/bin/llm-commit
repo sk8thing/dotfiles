@@ -16,7 +16,16 @@ The commit message must follow this structure:
 <optional body>
 <optional footer>
 
-Choose the correct commit type based on the changes in the diff. Valid types are: feat, fix, refactor, perf, style, test, docs, build, ops, chore.
+Choose the correct commit type based on the changes in the diff. Valid types are:
+build - Changes to build system or external dependencies (e.g., Quarto extensions, etc.)
+ci - Changes to continuous integration (“CI”) operations (e.g., GitHub Actions, etc.)
+docs - Changes to documentation
+feat - Changes that introduce a new feature
+fix - Changes that fix a bug
+perf - Changes that affect (improve) performance
+refactor - Changes that neither fix a bug nor add a feature. Used when the output of the code is unchanged but the way in which that output is reached has changed
+style - Changes that do not affect the meaning of the code (e.g., white space, formatting, etc.)
+test - Changes that create or modify tests
 
 Include a scope only if it adds meaningful context. Scopes are project-specific and must not contain issue identifiers.
 
