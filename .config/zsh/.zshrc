@@ -100,6 +100,9 @@ plugins=(
   fzf
   pyenv
   nvm
+  kubectl
+  argocd
+  opentofu
 )
 
 
