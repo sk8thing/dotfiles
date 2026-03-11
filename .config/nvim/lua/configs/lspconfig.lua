@@ -12,6 +12,7 @@ local servers = {
     pylsp = {},
     tailwindcss = {},
     templ = {},
+    termux_language_server = {},
     terraformls = {},
     vtsls = {},
     yamlls = {},
