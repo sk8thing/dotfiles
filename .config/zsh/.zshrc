@@ -94,15 +94,16 @@ eval "$(pyenv init --path)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  argocd
+  fzf
   git
+  golang
+  kubectl
+  nvm
+  opentofu
+  pyenv
   sudo
   zoxide
-  fzf
-  pyenv
-  nvm
-  kubectl
-  argocd
-  opentofu
 )
 
 
