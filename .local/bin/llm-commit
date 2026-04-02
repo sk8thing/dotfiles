@@ -51,7 +51,7 @@ EOF
 )
 
 generateCommitMsg() {
-    RESPONSE=$(ollama run qwen3:8b-q4_K_M "$PROMPT" --keepalive 30s)
+    RESPONSE=$(ollama run qwen3:8b "$PROMPT" --keepalive 30s)
     COMMIT_MESSAGE=$(echo "$RESPONSE" | sed -n '/\.\.\.done thinking/,$p' | sed '1d' | sed '/./,$!d')
 }
 
