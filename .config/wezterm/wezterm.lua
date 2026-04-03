@@ -65,7 +65,7 @@ end)
 
 --- Keybinds
 config.disable_default_key_bindings = true
-config.keys = {
+local keys = {
 	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
 	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
 	{ key = "s", mods = "CTRL|SHIFT", action = sessionizer.switch_workspace() },
@@ -74,26 +74,26 @@ config.keys = {
 	{ key = "p", mods = "CTRL|SHIFT", action = wezterm.action.SwitchWorkspaceRelative(-1) },
 	{ key = "t", mods = "CTRL|SHIFT", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
 	{ key = "w", mods = "CTRL|SHIFT", action = wezterm.action.CloseCurrentTab({ confirm = true }) },
-	{ key = "1", mods = "CTRL", action = wezterm.action.ActivateTab(0) },
-	{ key = "2", mods = "CTRL", action = wezterm.action.ActivateTab(1) },
-	{ key = "3", mods = "CTRL", action = wezterm.action.ActivateTab(2) },
-	{ key = "4", mods = "CTRL", action = wezterm.action.ActivateTab(3) },
-	{ key = "5", mods = "CTRL", action = wezterm.action.ActivateTab(4) },
-	{ key = "1", mods = "CTRL|ALT", action = wezterm.action.MoveTab(0) },
-	{ key = "2", mods = "CTRL|ALT", action = wezterm.action.MoveTab(1) },
-	{ key = "3", mods = "CTRL|ALT", action = wezterm.action.MoveTab(2) },
-	{ key = "4", mods = "CTRL|ALT", action = wezterm.action.MoveTab(3) },
-	{ key = "5", mods = "CTRL|ALT", action = wezterm.action.MoveTab(4) },
 	{ key = "Tab", mods = "CTRL|SHIFT", action = wezterm.action.ActivateTabRelative(-1) },
 	{ key = "Tab", mods = "CTRL", action = wezterm.action.ActivateTabRelative(1) },
 	{ key = '"', mods = "CTRL|SHIFT|ALT", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "%", mods = "CTRL|SHIFT|ALT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "h", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "j", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "k", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "l", mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection("Right") },
 	{ key = "w", mods = "CTRL|SHIFT|ALT", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
 	{ key = "~", mods = "CTRL|SHIFT|ALT", action = wezterm.action.ShowDebugOverlay },
 }
+
+for i = 1, 9 do
+	table.insert(keys, { key = tostring(i), mods = "CTRL", action = wezterm.action.ActivateTab(i - 1) })
+	table.insert(keys, { key = tostring(i), mods = "CTRL|ALT", action = wezterm.action.MoveTab(i - 1) })
+end
+table.insert(keys, { key = "0", mods = "CTRL", action = wezterm.action.ActivateTab(9) })
+table.insert(keys, { key = "0", mods = "CTRL|ALT", action = wezterm.action.MoveTab(9) })
+
+local direction_keys = { h = "Left", j = "Down", k = "Up", l = "Right" }
+for key, direction in pairs(direction_keys) do
+	table.insert(keys, { key = key, mods = "CTRL|SHIFT", action = wezterm.action.ActivatePaneDirection(direction) })
+end
+
+config.keys = keys
 
 return config
