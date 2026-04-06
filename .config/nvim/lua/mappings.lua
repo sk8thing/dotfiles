@@ -14,6 +14,12 @@ map("v", "<leader>cp", '"+y', { desc = "Copy selection to clipboard" })
 map("i", "<C-p>", function()
     require("llm.completion").complete()
 end, { desc = "Accept LLM completion", noremap = true, silent = true })
+map(
+    "n",
+    "<leader>cpa",
+    "<cmd>LLMToggleAutoSuggest<cr>",
+    { desc = "Toggle LLM autocomplete", noremap = true, silent = true }
+)
 map("v", ">", ">gv", { desc = "Indent visual selection" })
 map("v", "<", "<gv", { desc = "Unindent visual selection" })
 map("n", "K", "<cmd>Lspsaga hover_doc<cr>", { desc = "Hover documentation", noremap = true, silent = true })
