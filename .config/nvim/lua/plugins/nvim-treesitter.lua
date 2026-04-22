@@ -1,6 +1,8 @@
 ---@type NvPluginSpec
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    build = ":TSUpdate",
     opts = {
         highlight = {
             enable = true,
