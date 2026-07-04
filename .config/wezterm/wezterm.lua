@@ -82,12 +82,11 @@ local keys = {
 	{ key = "~", mods = "CTRL|SHIFT|ALT", action = wezterm.action.ShowDebugOverlay },
 }
 
-for i = 1, 9 do
-	table.insert(keys, { key = tostring(i), mods = "CTRL", action = wezterm.action.ActivateTab(i - 1) })
-	table.insert(keys, { key = tostring(i), mods = "CTRL|ALT", action = wezterm.action.MoveTab(i - 1) })
+for i = 1, 10 do
+    local n = i % 10
+	table.insert(keys, { key = tostring(n), mods = "CTRL", action = wezterm.action.ActivateTab(i - 1) })
+	table.insert(keys, { key = tostring(n), mods = "CTRL|ALT", action = wezterm.action.MoveTab(i - 1) })
 end
-table.insert(keys, { key = "0", mods = "CTRL", action = wezterm.action.ActivateTab(9) })
-table.insert(keys, { key = "0", mods = "CTRL|ALT", action = wezterm.action.MoveTab(9) })
 
 local direction_keys = { h = "Left", j = "Down", k = "Up", l = "Right" }
 for key, direction in pairs(direction_keys) do

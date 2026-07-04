@@ -10,10 +10,17 @@ version_check = false
 input_path = "./templates/wezterm.toml"
 output_path = "~/.config/wezterm/colors/wezterm-matugen.toml"
 
-# Hyprland
-[templates.hyprland]
+# Hyprland conf
+[templates.hyprland-conf]
 input_path = "./templates/hyprland.conf"
 output_path = "~/.config/hypr/hyprland-matugen.conf"
+post_hook = "hyprctl reload"
+
+# Hyprland lua
+[templates.hyprland-lua]
+input_path = "./templates/hyprland.lua"
+output_path = "~/.config/hypr/hyprland-matugen.lua"
+post_hook = "hyprctl reload"
 
 # Waybar
 [templates.waybar]
