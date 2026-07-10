@@ -1,0 +1,6 @@
+[submodule ".config/hypr/plugins/Hyprspace"]
+	path = .config/hypr/plugins/Hyprspace
+	url = https://github.com/0xl30/Hyprspace
+[submodule ".config/hypr/plugins/split-monitor-workspaces"]
+	path = .config/hypr/plugins/split-monitor-workspaces
+	url = https://github.com/zjeffer/split-monitor-workspaces
