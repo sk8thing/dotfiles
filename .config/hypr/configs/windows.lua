@@ -37,6 +37,7 @@ hl.window_rule({
 	name = "sysbar-float",
 	match = { class = "^(blueman-manager|org.pulseaudio.pavucontrol|org.kde.kdeconnect.app)$" },
 	float = true,
+	pin = true,
 	suppress_event = "fullscreen maximize",
 	size = { "(monitor_w*0.333333)", "(monitor_h*0.333333)" },
 	min_size = { "(monitor_w*0.333333)", "(monitor_h*0.333333)" },

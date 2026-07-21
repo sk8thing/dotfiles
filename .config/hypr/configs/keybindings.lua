@@ -18,7 +18,7 @@ hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(shiftMainMod .. " + U", hl.dsp.exec_cmd(lock))
 hl.bind(shiftMainMod .. " + Q", hl.dsp.exec_cmd(logout))
 hl.bind(mainMod .. " + G", function()
-	hyprspace.toggle()
+	hl.plugin.overview.toggle()
 end)
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(screenshot))
 hl.bind(shiftMainMod .. " + Delete", hl.dsp.exec_cmd(clipboard_clear))
@@ -33,16 +33,20 @@ hl.bind(shiftMainMod .. " + L", hl.dsp.window.move({ direction = "right" }))
 hl.bind(shiftMainMod .. " + K", hl.dsp.window.move({ direction = "up" }))
 hl.bind(shiftMainMod .. " + J", hl.dsp.window.move({ direction = "down" }))
 
-hl.bind(shiftMainMod .. " + 1", hl.dsp.focus({ monitor = "DP-2" }))
-hl.bind(shiftMainMod .. " + 2", hl.dsp.focus({ monitor = "HDMI-A-1" }))
+hl.bind(shiftControlMainMod .. " + 1", hl.dsp.focus({ monitor = "DP-2" }))
+hl.bind(shiftControlMainMod .. " + 2", hl.dsp.focus({ monitor = "HDMI-A-1" }))
 
-for i = 1, swm.get_amount_of_workspaces() do
+for i = 1, 5 do
 	local n = tostring(i)
 	if n == "10" then
 		n = "0"
 	end
-	hl.bind(mainMod .. " +" .. n, swm.workspace(n))
-	hl.bind(shiftMainMod .. " +" .. n, swm.move_to_workspace_silent(n))
+	hl.bind(mainMod .. " +" .. n, function()
+		return hl.plugin.split_monitor_workspaces.workspace(n)
+	end)
+	hl.bind(shiftMainMod .. " +" .. n, function()
+		return hl.plugin.split_monitor_workspaces.move_to_workspace_silent(n)
+	end)
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
