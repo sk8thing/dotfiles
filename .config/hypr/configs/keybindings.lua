@@ -36,17 +36,13 @@ hl.bind(shiftMainMod .. " + J", hl.dsp.window.move({ direction = "down" }))
 hl.bind(shiftControlMainMod .. " + 1", hl.dsp.focus({ monitor = "DP-2" }))
 hl.bind(shiftControlMainMod .. " + 2", hl.dsp.focus({ monitor = "HDMI-A-1" }))
 
-for i = 1, 5 do
+for i = 1, smw.get_amount_of_workspaces() do
 	local n = tostring(i)
 	if n == "10" then
 		n = "0"
 	end
-	hl.bind(mainMod .. " +" .. n, function()
-		return hl.plugin.split_monitor_workspaces.workspace(n)
-	end)
-	hl.bind(shiftMainMod .. " +" .. n, function()
-		return hl.plugin.split_monitor_workspaces.move_to_workspace_silent(n)
-	end)
+	hl.bind(mainMod .. " +" .. n, smw.workspace(n))
+	hl.bind(shiftMainMod .. " +" .. n, smw.move_to_workspace_silent(n))
 end
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })

@@ -1,12 +1,11 @@
 -----------------
 ---- PLUGINS ----
 -----------------
-hl.config({
-	plugin = {
-		split_monitor_workspaces = {
-			count = 5,
-		},
-	},
-})
+-- somewhere in your Hyprland config
+package.path = package.path .. ";./?.lua;./?/init.lua"
+smw = require("plugins.split-monitor-workspaces")
 
-hl.plugin.split_monitor_workspaces.monitor_priority({ "DP-2", "HDMI-A-2" })
+smw.setup({
+	workspace_count = 5,
+	monitor_priority = { "DP-2", "HDMI-A-2" },
+})
