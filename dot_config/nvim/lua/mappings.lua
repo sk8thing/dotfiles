@@ -1,4 +1,4 @@
-require "nvchad.mappings"
+require("nvchad.mappings")
 
 -- add yours here
 
@@ -12,13 +12,13 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move line up(V)" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move line down(V)" })
 map("v", "<leader>cp", '"+y', { desc = "Copy selection to clipboard" })
 map("i", "<C-p>", function()
-    require("llm.completion").complete()
+	require("llm.completion").complete()
 end, { desc = "Accept LLM completion", noremap = true, silent = true })
 map(
-    "n",
-    "<leader>cpa",
-    "<cmd>LLMToggleAutoSuggest<cr>",
-    { desc = "Toggle LLM autocomplete", noremap = true, silent = true }
+	"n",
+	"<leader>cpa",
+	"<cmd>LLMToggleAutoSuggest<cr>",
+	{ desc = "Toggle LLM autocomplete", noremap = true, silent = true }
 )
 map("v", ">", ">gv", { desc = "Indent visual selection" })
 map("v", "<", "<gv", { desc = "Unindent visual selection" })
@@ -28,7 +28,7 @@ map("n", "<leader>ra", "<cmd>Lspsaga rename<cr>", { desc = "LSP rename", noremap
 map("n", "<leader>pd", "<cmd>Lspsaga peek_definition<cr>", { desc = "Peek definition" })
 map("n", "<leader>pdt", "<cmd>Lspsaga peek_type_definition<cr>", { desc = "Peek type definition" })
 map("n", "<leader>gd", "<cmd>Lspsaga goto_definition<cr>", { desc = "Go to definition" })
-map("n", "<leader>gr", "<cmd>lua vim.lsp.buf.references()<cr>", { desc = "Go to references" })
+map("n", "<leader>gr", "<cmd>Lspsaga finder<cr>", { desc = "Go to references" })
 map("n", "<leader>gdt", "<cmd>Lspsaga goto_type_definition<cr>", { desc = "Go to type definition" })
 map("n", "<leader>gb", "<cmd>Telescope git_branches<cr>", { desc = "Lists all git branches" })
 
