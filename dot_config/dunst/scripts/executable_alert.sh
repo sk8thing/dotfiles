@@ -2,8 +2,8 @@
 
 APPNAME="$1"
 
-if [ "$APPNAME" == "Spotify" ]; then
+if [ "$APPNAME" == "Spotify" ] || [ "$APPNAME" == "Discord" ]; then
     exit 0
 else
-    paplay ~/.config/dunst/sounds/notification.wav
+    paplay --volume=32768 ~/.config/dunst/sounds/notification.wav
 fi
