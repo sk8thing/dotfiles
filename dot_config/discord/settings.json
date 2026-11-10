@@ -12,5 +12,7 @@
   },
   "offloadAdmControls": true,
   "enableHardwareAcceleration": true,
-  "SKIP_HOST_UPDATE": true
+  "SKIP_HOST_UPDATE": true,
+  "openH264Enabled": true,
+  "DESKTOP_TTI_HTTP_CDT": true
 }
