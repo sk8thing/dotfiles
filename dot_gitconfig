@@ -8,6 +8,9 @@
     gpgSign = true
 [core]
     editor = nvim
+    pager = nvim -R
+[color]
+    pager = no
 [merge]
 	tool = nvimdiff
 	conflictstyle = diff3
