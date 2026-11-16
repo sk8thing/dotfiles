@@ -6,31 +6,32 @@
 local M = {}
 
 M.ui = {
-    theme = "nvchad-matugen",
+	theme = "nvchad-matugen",
 }
 
 M.mason = {
-    pkgs = {
-        "bash-language-server",
-        "clangd",
-        "css-lsp",
-        "eslint-lsp",
-        "gopls",
-        "html-lsp",
-        "htmx-lsp",
-        "llm-ls",
-        "lua-language-server",
-        "prettier",
-        "prettierd",
-        "python-lsp-server",
-        "stylua",
-        "tailwindcss-language-server",
-        "templ",
-        "termux-language-server",
-        "terraform-ls",
-        "vtsls",
-        "yaml-language-server",
-    },
+	pkgs = {
+		"astro-language-server",
+		"bash-language-server",
+		"clangd",
+		"css-lsp",
+		"eslint-lsp",
+		"gopls",
+		"html-lsp",
+		"htmx-lsp",
+		"llm-ls",
+		"lua-language-server",
+		"prettier",
+		"prettierd",
+		"python-lsp-server",
+		"stylua",
+		"tailwindcss-language-server",
+		"templ",
+		"termux-language-server",
+		"terraform-ls",
+		"vtsls",
+		"yaml-language-server",
+	},
 }
 
 return M
